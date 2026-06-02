@@ -5,26 +5,23 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 @Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Leaves {
+public class Email {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-
     @Column(nullable = false)
-    private LocalDate startDate;
+    private String recipient;
     @Column(nullable = false)
-    private LocalDate endDate;
+    private String subject;
     @Column(nullable = false,length = 1000)
-    private String reason;
+    private String message;
+    @Column(nullable = false)
+    private LocalDateTime sentAt;
     @Column(nullable = false)
     private String status;
-
-    @ManyToOne
-    @JoinColumn(name = "emp_id")
-    private Employee employee;
 }
