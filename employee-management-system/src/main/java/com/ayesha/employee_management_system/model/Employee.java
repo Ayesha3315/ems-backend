@@ -32,6 +32,8 @@ public class Employee {
     private String email;
     @Column(name = "emp_password",nullable = false)
     private String password;
+    @Column(name = "emp_accStatus",nullable = false)
+    private String accountStatus;
 
     @ManyToOne
     @JoinColumn(name = "mng_id")
