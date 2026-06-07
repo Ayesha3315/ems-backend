@@ -16,7 +16,7 @@ public class EmailService {
     @Autowired
     private EmailRepo emailRepository;
 
-    private void sendEmail(String to,String subject,String body){
+    public void sendEmail(String to,String subject,String body){
         Email email=new Email();
         email.setRecipient(to);
         email.setSubject(subject);
